@@ -1,7 +1,7 @@
 import bpy
 
 # config
-file_path = "/Users/petershaw/Documents/test_models/BESTA-Bench_with_legs_black-browm.obj"
+file_path = "/Users/petershaw/Documents/IKEA_Models/HEMNES TV storage combination, black-brown/HEMNES_tv_storage_combination_black-brown.obj"
 output_path = "/Users/petershaw/Documents/blueprint-viewer/models/output.js"
 output_texture = "/Users/petershaw/Documents/blueprint-viewer/textures/atlas.png"
 
@@ -84,6 +84,8 @@ bpy.ops.mesh.uv_texture_remove()
 tex = bpy.data.textures.new('bake_tex', type = 'IMAGE')
 tex.image = image
 mat = bpy.data.materials.new('bake_mat')
+mat.diffuse_intensity = 1
+mat.diffuse_color = (1, 1 ,1)
 mtex = mat.texture_slots.add()
 mtex.texture = tex
 mtex.texture_coords = 'UV'
@@ -96,3 +98,4 @@ bpy.ops.object.delete()
 
 # export threejs
 bpy.ops.export.threejs(filepath=output_path)
+
