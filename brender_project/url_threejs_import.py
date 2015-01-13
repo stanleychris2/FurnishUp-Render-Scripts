@@ -8,7 +8,7 @@ tmp_filename = "/tmp/temp.js"
 request.urlretrieve("https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/777/ReliaBilt_Panel_Hollow_Core_baked.js", tmp_filename)
 
 #import three.js
-bpy.ops.import.threejs(filepath=tmp_filename)
+bpy.ops.__getattr__('import').threejs(filepath=tmp_filename)
 
 
 
