@@ -3,7 +3,7 @@ import urllib.request
 import sys
 import json
 
-jsonurl = "http://www.furnishup.com/rooms/j3S2witV.json"
+jsonurl = "http://www.furnishup.com/rooms/Hul2OfaX.json"
 
 def jsonImport(url):
 	global json
@@ -26,6 +26,12 @@ def jsonImport(url):
 		print (item['scale_x'])
 
 jsonImport(jsonurl)
+
+
+
+
+
+
 
 '''
 

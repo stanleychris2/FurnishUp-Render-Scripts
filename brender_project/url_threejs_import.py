@@ -13,6 +13,28 @@ bpy.ops.__getattr__('import').threejs(filepath=tmp_filename)
 
 
 '''
+
+import urllib
+import urllib.request
+import sys
+import json
+import io, bpy
+from urllib import request
+
+
+
+item_url = "https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/777/ReliaBilt_Panel_Hollow_Core_baked.js"
+
+def item_import_url(item_url):
+    tmp_filename = "/tmp/temp.js"
+    request.urlretrieve(item_url, tmp_filename)
+    bpy.ops.__getattr__('import').threejs(filepath=tmp_filename)
+
+item_import_url(item_url)
+
+
+
+
 http://stackoverflow.com/questions/19076062/blender-material-from-url
 
 
