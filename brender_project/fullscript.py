@@ -29,7 +29,7 @@ def jsonImport(url):
 		#x-axis, xpos
 		bpy.context.object.location[0] = item['xpos']
 		#y-axis, zpos
-		bpy.context.object.location[1] = item['zpos']
+		bpy.context.object.location[1] = (-1*item['zpos'])
 		#z-axis, ypos
 		bpy.context.object.location[2] = item['ypos']
 
