@@ -26,6 +26,14 @@ def jsonImport(url):
 		main_object = bpy.context.scene.objects.active
 		#center object if not already
 		center_active()
+		#x-axis, xpos
+		bpy.context.object.location[0] = item['xpos']
+		#y-axis, zpos
+		bpy.context.object.location[1] = item['zpos']
+		#z-axis, ypos
+		bpy.context.object.location[2] = item['ypos']
+
+
 
 
 def item_import_url(item_url):
@@ -46,6 +54,11 @@ def center_active():
     zpos = get_pos(object, 2)
     object.location = (-xpos, -ypos, -zpos + (object.dimensions[2]/2))
     bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+
+
+
+#import for xpos/zpos/ypos.... y needs to be a negative value b/c top left is origin for FU and bottom left is origin for blender... 
+#also need to find out what to do w/ finding center of item to place z value... its slightly off if you 'set geometry to origin'
 
 
 
